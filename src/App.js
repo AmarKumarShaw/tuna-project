@@ -7,6 +7,8 @@ import Login from './components/Login/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUs from './components/AboutUs/AboutUs';
 import SignIn from './components/SignIn/SignIn';
+import Post from './components/Post/Post';
+import SinglePost from './components/SinglePost/SinglePost';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/contact" element={<Message />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/post/:slug" element={<SinglePost />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
         <Footer />

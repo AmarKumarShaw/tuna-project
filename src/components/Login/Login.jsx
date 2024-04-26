@@ -1,7 +1,7 @@
 import "./login.css"
 
 import { useNavigate } from "react-router-dom"
-
+import { CiPaperplane } from "react-icons/ci";
 
 const Login = () => {
 
@@ -34,7 +34,7 @@ const Login = () => {
                                 <input type="textarea" placeholder="Enter Password*" className="border-b outline-none py-2 mb-4" />
                                 <input type="textarea" placeholder="Re-enter Password*" className="border-b outline-none py-2 mb-4" />
                             </div>
-                            <button className="bg-black text-white flex px-4 py-1 rounded-md curosr-pointer">Submit</button>
+                            <button className="bg-black text-white flex px-6 py-2 curosr-pointer">Login</button>
                             <p className="text-start py-2">Don't have an account? <button className='font-bold hover:bolder-b-2' onClick={handleClick}>Register Now</button></p>
                         </form>
                     </div>

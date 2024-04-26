@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -8,10 +9,10 @@ const Footer = () => {
             <div class="container-fluid mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center px-44 py-4">
                 <img src="./images/Tastebites.svg" alt="logo-img" />
                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-10 hover:text-gray-900 cursor-pointer">Home</a>
-                    <a class="mr-10 hover:text-gray-900 cursor-pointer">About Us</a>
-                    <a class="mr-10 hover:text-gray-900 cursor-pointer">Contact</a>
-                    <a class="mr-10 hover:text-gray-900 cursor-pointer">Article</a>
+                    <Link to="/" class="mr-10 hover:text-gray-900 cursor-pointer">Home</Link>
+                    <Link to="/about" class="mr-10 hover:text-gray-900 cursor-pointer">About Us</Link>
+                    <Link to="/contact" class="mr-10 hover:text-gray-900 cursor-pointer">Contact</Link>
+                    <Link class="mr-10 hover:text-gray-900 cursor-pointer">Article</Link>
                 </nav>
 
             </div>
