@@ -1,5 +1,4 @@
 import React from 'react'
-// import "./FeaturedPost.css"
 
 const RecipePostsMain = ({ img, title, description, avatarName, day, avatarImage }) => {
     return (
