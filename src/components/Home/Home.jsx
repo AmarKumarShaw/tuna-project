@@ -3,7 +3,6 @@ import "./home.css"
 import FeaturedPost from '../FeaturedPost/FeaturedPost'
 import { FeaturedPosts } from "../../data/data"
 import { CollectionPosts } from "../../data/data"
-import { RecipePostMain } from "../../data/data"
 import { RecipePostSide } from "../../data/data"
 import CurratedCollection from '../Collection/CurratedCollection'
 import RecipePostsMain from '../Recipe/Recipe'
@@ -12,6 +11,7 @@ import AboutUs from '../AboutUs/AboutUs'
 import { client } from './../../client';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from "@sanity/block-content-to-react";
+
 
 const Home = () => {
     const [post, setPost] = useState()
