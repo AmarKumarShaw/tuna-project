@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./home.css"
 import FeaturedPost from '../FeaturedPost/FeaturedPost'
 import { FeaturedPosts } from "../../data/data"
@@ -9,11 +9,41 @@ import CurratedCollection from '../Collection/CurratedCollection'
 import RecipePostsMain from '../Recipe/Recipe'
 import RecipeSidePost from '../RecipeSidePost/RecipeSidePost'
 import AboutUs from '../AboutUs/AboutUs'
+import { client } from './../../client';
+import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from "@sanity/block-content-to-react";
 
 const Home = () => {
-    return (
+    const [post, setPost] = useState()
 
-        <div className=''>
+    useEffect(() => {
+        client.fetch(
+            `*[_type == "post"]{
+          title,
+          slug,
+          mainImage{
+            asset->{
+            _id,
+            url
+          },
+        },  
+        body,
+      }`
+        )
+            .then((data) => setPost(data))
+            .catch(console.error);
+    }, []);
+
+    const builder = imageUrlBuilder(client);
+
+    function urlFor(source) {
+        return builder.image(source);
+    }
+
+
+    return (
+        <div div className='' >
+            {console.log(post)}
             <div className='lg:px-44 lg:py-16 '>
 
                 {/* First Section */}
@@ -47,11 +77,13 @@ const Home = () => {
                         <p className='text-left font-bold text-2xl pb-8'>Latest Recipe</p>
 
                         <div>
-
-                            {RecipePostMain.map((data, index) => {
+                            {post && post.map((data, index) => {
                                 return (
                                     <div>
-                                        <RecipePostsMain key={index} title={data.title} img={data.image} description={data.description} day={data.day} avatarName={data.avatarName} avatarImage={data.avatarImage} />
+                                        <RecipePostsMain key={index} title={data.title} img={data.mainImage.asset.url} description={<BlockContent
+                                            blocks={data.body}
+
+                                        />} />
                                     </div>
                                 )
                             })}
@@ -59,7 +91,7 @@ const Home = () => {
 
                     </div>
                     <div className='col-span-4'>
-                        <p className='text-left font-bold text-2xl pb-8' >Fresh Recipe</p>
+                        <p className='text-left font-bold text-2xl pb-8'>Fresh Recipe</p>
 
                         {RecipePostSide.map((data, index) => {
                             return (

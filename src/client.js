@@ -1,5 +1,7 @@
 import sanityClient from "@sanity/client"
-export default sanityClient({
+import { createClient } from "@sanity/client"
+export const client = createClient({
     projectId: "wn243ptr",
-    dataset: "production"
+    dataset: "production",
+    useCdn: true
 })

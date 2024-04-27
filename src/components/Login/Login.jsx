@@ -1,7 +1,5 @@
 import "./login.css"
-
 import { useNavigate } from "react-router-dom"
-import { CiPaperplane } from "react-icons/ci";
 
 const Login = () => {
 
