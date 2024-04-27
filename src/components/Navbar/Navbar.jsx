@@ -10,11 +10,15 @@ const Navbar = () => {
 
         navigate('/login');
     };
+    const handleClickHome = () => {
+
+        navigate('/');
+    };
     return (
         <div>
             <header class="text-gray-600 body-font shadow-md h-[12vh]">
                 <div class="container-fluid mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center px-44 py-4">
-                    <img src="./images/Tastebites.svg" alt="logo-img" />
+                    <img className='cursor-pointer' onClick={handleClickHome} src="./images/Tastebites.svg" alt="logo-img" />
                     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center font-bold">
                         <Link to="/" class="mr-10 hover:text-gray-900 cursor-pointer">Home</Link>
                         <Link to="/about" class="mr-10 hover:text-gray-900 cursor-pointer">About Us</Link>
