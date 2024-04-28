@@ -21,7 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/recipe " element={<RecipePostsMain />} />
-          <Route exact path="/recipe/singlepost" element={<SinglePost />} />
+          <Route exact path="/recipe/:postId" element={<SinglePost />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
         <Footer />

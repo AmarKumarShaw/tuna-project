@@ -11,6 +11,8 @@ import AboutUs from '../AboutUs/AboutUs'
 import { client } from './../../client';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from "@sanity/block-content-to-react";
+import { Link } from 'react-router-dom'
+
 
 
 const Home = () => {
@@ -84,13 +86,15 @@ const Home = () => {
                             {post && post.map((data, index) => {
                                 return (
                                     <div>
-                                        <RecipePostsMain key={index} title={data.title}
-                                            avatarName={data.author.name} img={data.mainImage.asset.url} avatarImage={data.author.image.asset.url
+                                        <Link to={`/recipe/${data.slug.current}`}>
+                                            <RecipePostsMain key={index} title={data.title}
+                                                avatarName={data.author.name} img={data.mainImage.asset.url} avatarImage={data.author.image.asset.url
 
-                                            } description={<BlockContent
-                                                blocks={data.body}
+                                                } description={<BlockContent
+                                                    blocks={data.body}
 
-                                            />} />
+                                                />} />
+                                        </Link>
                                     </div>
                                 )
                             })}
@@ -111,7 +115,7 @@ const Home = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
