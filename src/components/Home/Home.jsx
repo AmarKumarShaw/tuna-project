@@ -18,17 +18,21 @@ const Home = () => {
 
     useEffect(() => {
         client.fetch(
-            `*[_type == "post"]{
-          title,
-          slug,
-          mainImage{
-            asset->{
+            `* [_type == "post"]{
+            title,
+            slug,
+            "author": author-> {
+                name,
+                image { asset-> { url } }
+              },
+            mainImage{
+                asset-> {
             _id,
             url
-          },
-        },  
+        },
+              },
         body,
-      }`
+            }`
         )
             .then((data) => setPost(data))
             .catch(console.error);
@@ -80,10 +84,13 @@ const Home = () => {
                             {post && post.map((data, index) => {
                                 return (
                                     <div>
-                                        <RecipePostsMain key={index} title={data.title} img={data.mainImage.asset.url} description={<BlockContent
-                                            blocks={data.body}
+                                        <RecipePostsMain key={index} title={data.title}
+                                            avatarName={data.author.name} img={data.mainImage.asset.url} avatarImage={data.author.image.asset.url
 
-                                        />} />
+                                            } description={<BlockContent
+                                                blocks={data.body}
+
+                                            />} />
                                     </div>
                                 )
                             })}

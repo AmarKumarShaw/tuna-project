@@ -2,19 +2,6 @@ import React from 'react'
 
 const RecipePostsMain = ({ img, title, description, avatarName, day, avatarImage }) => {
 
-    // useEffect(() => {
-    //     sanityClient.fetch(`*[_type == "post"]{
-    //             title,
-    //             slug,
-    //             mainImage{
-    //                 _id,
-    //                 url
-    //             },
-    //             alt
-    //     }`).then((data) => setPost(data))
-    //         .catch(console.error)
-    // })
-
     return (
         <div className='border mb-4 cursor-pointer'>
             <div className='w-full'>
@@ -27,12 +14,12 @@ const RecipePostsMain = ({ img, title, description, avatarName, day, avatarImage
                 </div>
                 <div>
                     <div className='flex items-center justify-between px-2'>
-                        <div className='flex '>
-                            <img src={avatarImage} alt="avatarImage" />
-                            <p className='px-4 flex items-center'>{avatarName}</p>
+                        <div className='flex'>
+                            <img className='h-10 w-10 rounded-full' src={avatarImage} alt="avatarImage" />
+                            <p className='px-4 flex items-center text-gray-500'>{avatarName}</p>
                         </div>
                         <div>
-                            <p className='text-base text-gray-500'>{day}</p>
+                            <p className='text-base text-gray-500'>{"Yesterday"}</p>
                         </div>
                     </div>
                 </div>
