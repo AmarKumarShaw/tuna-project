@@ -50,10 +50,10 @@ const Home = () => {
     return (
         <div div className='' >
             {console.log(post)}
-            <div className='lg:px-44 lg:py-16 '>
+            <div className='lg:px-44 lg:py-12 '>
 
                 {/* First Section */}
-                <div className='flex justify-between h-[78vh] '>
+                <div className='flex flex-wrap justify-center gap-12 py-4'>
                     {FeaturedPosts.map((data, index) => {
                         return (
                             <FeaturedPost key={index} img={data.image} title={data.title} />

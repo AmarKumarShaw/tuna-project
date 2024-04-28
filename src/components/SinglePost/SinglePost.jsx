@@ -42,13 +42,11 @@ const SinglePost = () => {
                 <p className='font-normal bg-gray-200 p-4 px-12 text-start'>
                   <SanityBlockContent
                     blocks={data.body}
-
                   />
                 </p>
               </div>
             </div>
           </div>
-
         )
       })}
     </div>
