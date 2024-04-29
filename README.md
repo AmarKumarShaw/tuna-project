@@ -9,6 +9,7 @@ This project is a blog and recipe app built using React and Sanity.io. It allows
 - **User Authentication:** Register and login to access additional features and personalize your experience.
 - **Responsive Design:** The app is designed to work flawlessly on desktops, tablets, and mobile devices, ensuring a consistent user experience across all platforms.
 - **User-Friendly Interface:** Intuitive navigation and clear layout make it easy for users to find the content they're interested in.
+- **Dynamic Routes:** Intuitive navigation and clear layout make it easy for users to find the content they're interested in.
 
 ## Technologies Used
 
