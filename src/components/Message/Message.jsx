@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const Message = () => {
+
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    const [number, setNumber] = useState()
+    const [message, setMessage] = useState()
+
     return (
         <div className='flex flex-row justify-between items-center h-[80vh] pl-44'>
             <div className='flex flex-col items-start justify-start px-8'>
@@ -18,10 +24,10 @@ const Message = () => {
                     <form>
 
                         <div className='flex flex-col w-[400px]'>
-                            <input type="text" placeholder="Name*" className="border-b outline-none py-2 mb-4" />
-                            <input type="email" placeholder="Email*" className="border-b outline-none py-2 mb-4" />
-                            <input type="number" placeholder="Phone*" className="border-b outline-none py-2 mb-4" />
-                            <input type="textarea" placeholder="Message*" className="border-b outline-none py-2 mb-4" />
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="Name*" className="border-b outline-none py-2 mb-4" />
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="Email*" className="border-b outline-none py-2 mb-4" />
+                            <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} required placeholder="Phone*" className="border-b outline-none py-2 mb-4" />
+                            <input type="textarea" value={message} onChange={(e) => setMessage(e.target.value)} required placeholder="Message*" className="border-b outline-none py-2 mb-4" />
                         </div>
                         <button className="bg-black text-white flex px-4 py-1 rounded-md curosr-pointer">Submit</button>
                     </form>
