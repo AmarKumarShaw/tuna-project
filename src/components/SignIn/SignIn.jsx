@@ -10,7 +10,7 @@ const SignIn = () => {
     return (
         <div className=''>
 
-            <div className='flex flex-col lg:flex-row justify-between items-center lg:h-[80vh] pl-4 md:pl-8 lg:pl-44'>
+            <div className='flex flex-col lg:flex-row justify-between items-center lg:h-[80vh] pl-4 md:pl-8 lg:pl-44 pt-8'>
                 <div className='flex flex-col items-start justify-start lg:px-8'>
                     <div className='flex flex-col'>
                         <div><p className='font-bold uppercase text-2xl text-left text-blue-800'>Sign In into our Account</p></div>

@@ -12,7 +12,7 @@ const Login = () => {
     return (
         <div className=' lg:py-0  sm:py-8'>
 
-            <div className='flex flex-col lg:flex-row justify-between items-center lg:h-[80vh] pl-4 md:pl-8 lg:pl-44 sm:py-8'>
+            <div className='flex flex-col lg:flex-row justify-between items-center lg:h-[80vh] pl-4 md:pl-8 lg:pl-44 sm:py-8 pt-8'>
                 <div className='flex flex-col items-start justify-start lg:px-8'>
                     <div className='flex flex-col'>
                         <div><p className='font-bold uppercase text-2xl text-left text-blue-800'>Log In into our Account</p></div>
