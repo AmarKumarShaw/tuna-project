@@ -67,7 +67,7 @@ const Home = () => {
             <AboutUs />
             {/* Third Section */}
             <div className='bg-gray-50 lg:px-44 lg:py-16'>
-                <div className='flex flex-wrap justify-between'>
+                <div className='flex flex-wrap justify-center lg:gap-12'>
                     {CollectionPosts.map((data, index) => {
                         return (
                             <CurratedCollection key={index} img={data.image} title={data.title} />
@@ -77,10 +77,10 @@ const Home = () => {
                 </div>
             </div>
             {/* {Fourth Section } */}
-            <div className='lg:px-44 lg:py-16'>
+            <div className='lg:px-44 lg:py-16 '>
                 <div className='grid grid-cols-12 gap-4'>
                     <div className='col-span-8'>
-                        <p className='text-left font-bold text-2xl pb-8'>Latest Recipe</p>
+                        <p className='text-left  font-bold text-2xl pb-8'>Latest Recipe</p>
 
                         <div>
                             {post && post.map((data, index) => {
@@ -115,7 +115,7 @@ const Home = () => {
                 </div>
             </div>
 
-        </div >
+        </div>
     )
 }
 
